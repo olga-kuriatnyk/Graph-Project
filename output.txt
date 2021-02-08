@@ -1,0 +1,762 @@
+Sun Jan 24 08:54:43 PST 2021
+Darwin silvery 17.7.0 Darwin Kernel Version 17.7.0: Fri Oct 30 13:34:27 PDT 2020; root:xnu-4570.71.82.8~1/RELEASE_X86_64 x86_64
+uid=501(yusuf) gid=20(staff) groups=20(staff),12(everyone),61(localaccounts),79(_appserverusr),80(admin),81(_appserveradm),98(_lpadmin),33(_appstore),100(_lpoperator),204(_developer),250(_analyticsusers),395(com.apple.access_ftp),398(com.apple.access_screensharing),399(com.apple.access_ssh),701(com.apple.sharepoint.group.1),702(com.apple.sharepoint.group.2)
+=====================================================
+1. Compiles without warnings with -Wall -Wextra flags
+=====================================================
+=====================================================
+2. Runs and produces correct output
+=====================================================
+testGraph0DFS
+testGraph0BFS
+testGraph0Dijkstra
+testGraph0NotDirected
+testGraph1
+Done!
+=====================================================
+3. clang-tidy warnings are fixed
+=====================================================
+6 warnings generated.
+25715 warnings generated.
+47959 warnings generated.
+67631 warnings generated.
+88632 warnings generated.
+/Users/yusuf/bitbucket/pisan343/graph-solution/edge.h:20:16: warning: invalid case style for parameter 'from' [readability-identifier-naming]
+  Edge(Vertex *from, Vertex *to, int weight)
+               ^~~~
+               From
+/Users/yusuf/bitbucket/pisan343/graph-solution/edge.h:20:30: warning: invalid case style for parameter 'to' [readability-identifier-naming]
+  Edge(Vertex *from, Vertex *to, int weight)
+                             ^~
+                             To
+/Users/yusuf/bitbucket/pisan343/graph-solution/edge.h:20:38: warning: invalid case style for parameter 'weight' [readability-identifier-naming]
+  Edge(Vertex *from, Vertex *to, int weight)
+                                     ^~~~~~
+                                     Weight
+/Users/yusuf/bitbucket/pisan343/graph-solution/edge.h:24:11: warning: invalid case style for member 'from' [readability-identifier-naming]
+  Vertex *from;
+          ^~~~
+          From
+/Users/yusuf/bitbucket/pisan343/graph-solution/edge.h:27:11: warning: invalid case style for member 'to' [readability-identifier-naming]
+  Vertex *to;
+          ^~
+          To
+/Users/yusuf/bitbucket/pisan343/graph-solution/edge.h:30:7: warning: invalid case style for member 'weight' [readability-identifier-naming]
+  int weight;
+      ^~~~~~
+      Weight
+/Users/yusuf/bitbucket/pisan343/graph-solution/graph.cpp:14:19: warning: invalid case style for parameter 'directionalEdges' [readability-identifier-naming]
+Graph::Graph(bool directionalEdges)
+                  ^~~~~~~~~~~~~~~~
+                  DirectionalEdges
+/Users/yusuf/bitbucket/pisan343/graph-solution/graph.cpp:18:14: warning: invalid case style for variable 'vp' [readability-identifier-naming]
+  for (auto &vp : vertices)
+             ^~
+             Vp
+/Users/yusuf/bitbucket/pisan343/graph-solution/graph.cpp:26:40: warning: invalid case style for parameter 'label' [readability-identifier-naming]
+int Graph::neighborsSize(const string &label) const {
+                                       ^~~~~
+                                       Label
+/Users/yusuf/bitbucket/pisan343/graph-solution/graph.cpp:27:11: warning: invalid case style for variable 'v' [readability-identifier-naming]
+  Vertex *v = findVertex(label);
+          ^
+          V
+/Users/yusuf/bitbucket/pisan343/graph-solution/graph.cpp:31:31: warning: invalid case style for parameter 'label' [readability-identifier-naming]
+bool Graph::add(const string &label) {
+                              ^~~~~
+                              Label
+/Users/yusuf/bitbucket/pisan343/graph-solution/graph.cpp:32:11: warning: invalid case style for variable 'v' [readability-identifier-naming]
+  Vertex *v = findVertex(label);
+          ^
+          V
+/Users/yusuf/bitbucket/pisan343/graph-solution/graph.cpp:39:36: warning: invalid case style for parameter 'label' [readability-identifier-naming]
+bool Graph::contains(const string &label) const {
+                                   ^~~~~
+                                   Label
+/Users/yusuf/bitbucket/pisan343/graph-solution/graph.cpp:40:10: warning: invalid case style for variable 'vLabel' [readability-identifier-naming]
+  string vLabel = modifyIfAllDigits(label);
+         ^~~~~~
+         VLabel
+/Users/yusuf/bitbucket/pisan343/graph-solution/graph.cpp:44:46: warning: invalid case style for parameter 'label' [readability-identifier-naming]
+string Graph::getEdgesAsString(const string &label) const {
+                                             ^~~~~
+                                             Label
+/Users/yusuf/bitbucket/pisan343/graph-solution/graph.cpp:45:3: warning: 'auto V' can be declared as 'auto *V' [llvm-qualified-auto]
+  auto V = findVertex(label);
+  ^
+note: this fix will not be applied because it overlaps with another fix
+/Users/yusuf/bitbucket/pisan343/graph-solution/graph.cpp:45:3: warning: 'auto V' can be declared as 'auto *V' [readability-qualified-auto]
+note: this fix will not be applied because it overlaps with another fix
+/Users/yusuf/bitbucket/pisan343/graph-solution/graph.cpp:51:35: warning: invalid case style for parameter 'from' [readability-identifier-naming]
+bool Graph::connect(const string &from, const string &to, int weight) {
+                                  ^~~~
+                                  From
+/Users/yusuf/bitbucket/pisan343/graph-solution/graph.cpp:51:55: warning: invalid case style for parameter 'to' [readability-identifier-naming]
+bool Graph::connect(const string &from, const string &to, int weight) {
+                                                      ^~
+                                                      To
+/Users/yusuf/bitbucket/pisan343/graph-solution/graph.cpp:51:63: warning: invalid case style for parameter 'weight' [readability-identifier-naming]
+bool Graph::connect(const string &from, const string &to, int weight) {
+                                                              ^~~~~~
+                                                              Weight
+/Users/yusuf/bitbucket/pisan343/graph-solution/graph.cpp:54:3: warning: 'auto fx' can be declared as 'auto *fx' [llvm-qualified-auto]
+  auto fx = findVertex(from);
+  ^
+note: this fix will not be applied because it overlaps with another fix
+/Users/yusuf/bitbucket/pisan343/graph-solution/graph.cpp:54:3: warning: 'auto fx' can be declared as 'auto *fx' [readability-qualified-auto]
+note: this fix will not be applied because it overlaps with another fix
+/Users/yusuf/bitbucket/pisan343/graph-solution/graph.cpp:54:8: warning: invalid case style for variable 'fx' [readability-identifier-naming]
+  auto fx = findVertex(from);
+       ^~
+       Fx
+/Users/yusuf/bitbucket/pisan343/graph-solution/graph.cpp:57:3: warning: 'auto tx' can be declared as 'auto *tx' [llvm-qualified-auto]
+  auto tx = findVertex(to);
+  ^
+note: this fix will not be applied because it overlaps with another fix
+/Users/yusuf/bitbucket/pisan343/graph-solution/graph.cpp:57:3: warning: 'auto tx' can be declared as 'auto *tx' [readability-qualified-auto]
+note: this fix will not be applied because it overlaps with another fix
+/Users/yusuf/bitbucket/pisan343/graph-solution/graph.cpp:57:8: warning: invalid case style for variable 'tx' [readability-identifier-naming]
+  auto tx = findVertex(to);
+       ^~
+       Tx
+/Users/yusuf/bitbucket/pisan343/graph-solution/graph.cpp:73:38: warning: invalid case style for parameter 'from' [readability-identifier-naming]
+bool Graph::disconnect(const string &from, const string &to) {
+                                     ^~~~
+                                     From
+/Users/yusuf/bitbucket/pisan343/graph-solution/graph.cpp:73:58: warning: invalid case style for parameter 'to' [readability-identifier-naming]
+bool Graph::disconnect(const string &from, const string &to) {
+                                                         ^~
+                                                         To
+/Users/yusuf/bitbucket/pisan343/graph-solution/graph.cpp:74:3: warning: 'auto fx' can be declared as 'auto *fx' [llvm-qualified-auto]
+  auto fx = findVertex(from);
+  ^
+note: this fix will not be applied because it overlaps with another fix
+/Users/yusuf/bitbucket/pisan343/graph-solution/graph.cpp:74:3: warning: 'auto fx' can be declared as 'auto *fx' [readability-qualified-auto]
+note: this fix will not be applied because it overlaps with another fix
+/Users/yusuf/bitbucket/pisan343/graph-solution/graph.cpp:74:8: warning: invalid case style for variable 'fx' [readability-identifier-naming]
+  auto fx = findVertex(from);
+       ^~
+       Fx
+/Users/yusuf/bitbucket/pisan343/graph-solution/graph.cpp:75:3: warning: 'auto tx' can be declared as 'auto *tx' [llvm-qualified-auto]
+  auto tx = findVertex(to);
+  ^
+note: this fix will not be applied because it overlaps with another fix
+/Users/yusuf/bitbucket/pisan343/graph-solution/graph.cpp:75:3: warning: 'auto tx' can be declared as 'auto *tx' [readability-qualified-auto]
+note: this fix will not be applied because it overlaps with another fix
+/Users/yusuf/bitbucket/pisan343/graph-solution/graph.cpp:75:8: warning: invalid case style for variable 'tx' [readability-identifier-naming]
+  auto tx = findVertex(to);
+       ^~
+       Tx
+/Users/yusuf/bitbucket/pisan343/graph-solution/graph.cpp:78:8: warning: invalid case style for variable 'successfullyDisconnected' [readability-identifier-naming]
+  bool successfullyDisconnected = fx->disconnect(tx);
+       ^~~~~~~~~~~~~~~~~~~~~~~~
+       SuccessfullyDisconnected
+/Users/yusuf/bitbucket/pisan343/graph-solution/graph.cpp:84:41: warning: invalid case style for parameter 'label' [readability-identifier-naming]
+Vertex *Graph::findVertex(const string &label) const {
+                                        ^~~~~
+                                        Label
+/Users/yusuf/bitbucket/pisan343/graph-solution/graph.cpp:85:10: warning: invalid case style for variable 'vLabel' [readability-identifier-naming]
+  string vLabel = modifyIfAllDigits(label);
+         ^~~~~~
+         VLabel
+/Users/yusuf/bitbucket/pisan343/graph-solution/graph.cpp:86:8: warning: invalid case style for variable 'vp' [readability-identifier-naming]
+  auto vp = vertices.find(vLabel);
+       ^~
+       Vp
+/Users/yusuf/bitbucket/pisan343/graph-solution/graph.cpp:90:47: warning: invalid case style for parameter 'label' [readability-identifier-naming]
+string Graph::modifyIfAllDigits(const string &label) {
+                                              ^~~~~
+                                              Label
+/Users/yusuf/bitbucket/pisan343/graph-solution/graph.cpp:95:8: warning: invalid case style for variable 'allD' [readability-identifier-naming]
+  bool allD = true;
+       ^~~~
+       AllD
+/Users/yusuf/bitbucket/pisan343/graph-solution/graph.cpp:96:7: warning: invalid case style for variable 'i' [readability-identifier-naming]
+  int i = 0;
+      ^
+      I
+/Users/yusuf/bitbucket/pisan343/graph-solution/graph.cpp:102:10: warning: invalid case style for variable 'c' [readability-identifier-naming]
+    char c = static_cast<char>('A' + stoi(label));
+         ^
+         C
+/Users/yusuf/bitbucket/pisan343/graph-solution/graph.cpp:108:43: warning: invalid case style for parameter 'label' [readability-identifier-naming]
+Vertex *Graph::createVertex(const string &label) {
+                                          ^~~~~
+                                          Label
+/Users/yusuf/bitbucket/pisan343/graph-solution/graph.cpp:109:10: warning: invalid case style for variable 'vLabel' [readability-identifier-naming]
+  string vLabel = modifyIfAllDigits(label);
+         ^~~~~~
+         VLabel
+/Users/yusuf/bitbucket/pisan343/graph-solution/graph.cpp:110:3: warning: 'auto v' can be declared as 'auto *v' [llvm-qualified-auto]
+  auto v = new Vertex(vLabel);
+  ^
+note: this fix will not be applied because it overlaps with another fix
+/Users/yusuf/bitbucket/pisan343/graph-solution/graph.cpp:110:3: warning: 'auto v' can be declared as 'auto *v' [readability-qualified-auto]
+note: this fix will not be applied because it overlaps with another fix
+/Users/yusuf/bitbucket/pisan343/graph-solution/graph.cpp:110:8: warning: invalid case style for variable 'v' [readability-identifier-naming]
+  auto v = new Vertex(vLabel);
+       ^
+       V
+/Users/yusuf/bitbucket/pisan343/graph-solution/graph.cpp:116:14: warning: invalid case style for variable 'vp' [readability-identifier-naming]
+  for (auto &vp : vertices)
+             ^~
+             Vp
+/Users/yusuf/bitbucket/pisan343/graph-solution/graph.cpp:120:31: warning: invalid case style for parameter 'startLabel' [readability-identifier-naming]
+void Graph::dfs(const string &startLabel, void visit(const string &label)) {
+                              ^~~~~~~~~~
+                              StartLabel
+/Users/yusuf/bitbucket/pisan343/graph-solution/graph.cpp:120:48: warning: invalid case style for parameter 'visit' [readability-identifier-naming]
+void Graph::dfs(const string &startLabel, void visit(const string &label)) {
+                                               ^~~~~
+                                               Visit
+/Users/yusuf/bitbucket/pisan343/graph-solution/graph.cpp:120:68: warning: invalid case style for parameter 'label' [readability-identifier-naming]
+void Graph::dfs(const string &startLabel, void visit(const string &label)) {
+                                                                   ^~~~~
+                                                                   Label
+/Users/yusuf/bitbucket/pisan343/graph-solution/graph.cpp:121:3: warning: 'auto v' can be declared as 'auto *v' [llvm-qualified-auto]
+  auto v = findVertex(startLabel);
+  ^
+note: this fix will not be applied because it overlaps with another fix
+/Users/yusuf/bitbucket/pisan343/graph-solution/graph.cpp:121:3: warning: 'auto v' can be declared as 'auto *v' [readability-qualified-auto]
+note: this fix will not be applied because it overlaps with another fix
+/Users/yusuf/bitbucket/pisan343/graph-solution/graph.cpp:121:8: warning: invalid case style for variable 'v' [readability-identifier-naming]
+  auto v = findVertex(startLabel);
+       ^
+       V
+/Users/yusuf/bitbucket/pisan343/graph-solution/graph.cpp:128:31: warning: invalid case style for parameter 'v' [readability-identifier-naming]
+void Graph::dfsHelper(Vertex *v, void visit(const string &label)) {
+                              ^
+                              V
+/Users/yusuf/bitbucket/pisan343/graph-solution/graph.cpp:128:39: warning: invalid case style for parameter 'visit' [readability-identifier-naming]
+void Graph::dfsHelper(Vertex *v, void visit(const string &label)) {
+                                      ^~~~~
+                                      Visit
+/Users/yusuf/bitbucket/pisan343/graph-solution/graph.cpp:128:59: warning: invalid case style for parameter 'label' [readability-identifier-naming]
+void Graph::dfsHelper(Vertex *v, void visit(const string &label)) {
+                                                          ^~~~~
+                                                          Label
+/Users/yusuf/bitbucket/pisan343/graph-solution/graph.cpp:130:10: warning: invalid case style for variable 'label' [readability-identifier-naming]
+  string label = v->label;
+         ^~~~~
+         Label
+/Users/yusuf/bitbucket/pisan343/graph-solution/graph.cpp:132:14: warning: invalid case style for variable 'e' [readability-identifier-naming]
+  for (auto &e : v->edges) {
+             ^
+             E
+/Users/yusuf/bitbucket/pisan343/graph-solution/graph.cpp:138:31: warning: invalid case style for parameter 'startLabel' [readability-identifier-naming]
+void Graph::bfs(const string &startLabel, void visit(const string &label)) {
+                              ^~~~~~~~~~
+                              StartLabel
+/Users/yusuf/bitbucket/pisan343/graph-solution/graph.cpp:138:48: warning: invalid case style for parameter 'visit' [readability-identifier-naming]
+void Graph::bfs(const string &startLabel, void visit(const string &label)) {
+                                               ^~~~~
+                                               Visit
+/Users/yusuf/bitbucket/pisan343/graph-solution/graph.cpp:138:68: warning: invalid case style for parameter 'label' [readability-identifier-naming]
+void Graph::bfs(const string &startLabel, void visit(const string &label)) {
+                                                                   ^~~~~
+                                                                   Label
+/Users/yusuf/bitbucket/pisan343/graph-solution/graph.cpp:139:11: warning: invalid case style for variable 'v' [readability-identifier-naming]
+  Vertex *v = findVertex(startLabel);
+          ^
+          V
+/Users/yusuf/bitbucket/pisan343/graph-solution/graph.cpp:146:31: warning: invalid case style for parameter 'v' [readability-identifier-naming]
+void Graph::bfsHelper(Vertex *v, void visit(const string &label)) {
+                              ^
+                              V
+/Users/yusuf/bitbucket/pisan343/graph-solution/graph.cpp:146:39: warning: invalid case style for parameter 'visit' [readability-identifier-naming]
+void Graph::bfsHelper(Vertex *v, void visit(const string &label)) {
+                                      ^~~~~
+                                      Visit
+/Users/yusuf/bitbucket/pisan343/graph-solution/graph.cpp:146:59: warning: invalid case style for parameter 'label' [readability-identifier-naming]
+void Graph::bfsHelper(Vertex *v, void visit(const string &label)) {
+                                                          ^~~~~
+                                                          Label
+/Users/yusuf/bitbucket/pisan343/graph-solution/graph.cpp:147:19: warning: invalid case style for variable 'vertexQueue' [readability-identifier-naming]
+  queue<Vertex *> vertexQueue;
+                  ^~~~~~~~~~~
+                  VertexQueue
+/Users/yusuf/bitbucket/pisan343/graph-solution/graph.cpp:152:5: warning: 'auto front' can be declared as 'auto *front' [llvm-qualified-auto]
+    auto front = vertexQueue.front();
+    ^
+note: this fix will not be applied because it overlaps with another fix
+/Users/yusuf/bitbucket/pisan343/graph-solution/graph.cpp:152:5: warning: 'auto front' can be declared as 'auto *front' [readability-qualified-auto]
+note: this fix will not be applied because it overlaps with another fix
+/Users/yusuf/bitbucket/pisan343/graph-solution/graph.cpp:152:10: warning: invalid case style for variable 'front' [readability-identifier-naming]
+    auto front = vertexQueue.front();
+         ^~~~~
+         Front
+/Users/yusuf/bitbucket/pisan343/graph-solution/graph.cpp:154:12: warning: invalid case style for variable 'label' [readability-identifier-naming]
+    string label = front->label;
+           ^~~~~
+           Label
+/Users/yusuf/bitbucket/pisan343/graph-solution/graph.cpp:156:16: warning: invalid case style for variable 'e' [readability-identifier-naming]
+    for (auto &e : front->edges) {
+               ^
+               E
+/Users/yusuf/bitbucket/pisan343/graph-solution/graph.cpp:168:31: warning: invalid case style for parameter 'startLabel' [readability-identifier-naming]
+Graph::dijkstra(const string &startLabel) const {
+                              ^~~~~~~~~~
+                              StartLabel
+/Users/yusuf/bitbucket/pisan343/graph-solution/graph.cpp:169:20: warning: invalid case style for variable 'weights' [readability-identifier-naming]
+  map<string, int> weights;
+                   ^~~~~~~
+                   Weights
+/Users/yusuf/bitbucket/pisan343/graph-solution/graph.cpp:170:23: warning: invalid case style for variable 'previous' [readability-identifier-naming]
+  map<string, string> previous;
+                      ^~~~~~~~
+                      Previous
+/Users/yusuf/bitbucket/pisan343/graph-solution/graph.cpp:171:11: warning: invalid case style for variable 'startVertex' [readability-identifier-naming]
+  Vertex *startVertex = findVertex(startLabel);
+          ^~~~~~~~~~~
+          StartVertex
+/Users/yusuf/bitbucket/pisan343/graph-solution/graph.cpp:175:47: warning: invalid case style for variable 'pq' [readability-identifier-naming]
+  priority_queue<IV, vector<IV>, greater<IV>> pq;
+                                              ^~
+                                              Pq
+/Users/yusuf/bitbucket/pisan343/graph-solution/graph.cpp:176:17: warning: invalid case style for variable 'vertexSet' [readability-identifier-naming]
+  set<Vertex *> vertexSet;
+                ^~~~~~~~~
+                VertexSet
+/Users/yusuf/bitbucket/pisan343/graph-solution/graph.cpp:179:20: warning: invalid case style for variable 'e' [readability-identifier-naming]
+  for (const auto &e : startVertex->edges) {
+                   ^
+                   E
+/Users/yusuf/bitbucket/pisan343/graph-solution/graph.cpp:185:5: warning: 'auto v' can be declared as 'auto *v' [llvm-qualified-auto]
+    auto v = pq.top().second;
+    ^
+note: this fix will not be applied because it overlaps with another fix
+/Users/yusuf/bitbucket/pisan343/graph-solution/graph.cpp:185:5: warning: 'auto v' can be declared as 'auto *v' [readability-qualified-auto]
+note: this fix will not be applied because it overlaps with another fix
+/Users/yusuf/bitbucket/pisan343/graph-solution/graph.cpp:185:10: warning: invalid case style for variable 'v' [readability-identifier-naming]
+    auto v = pq.top().second;
+         ^
+         V
+/Users/yusuf/bitbucket/pisan343/graph-solution/graph.cpp:190:22: warning: invalid case style for variable 'e' [readability-identifier-naming]
+    for (const auto &e : v->edges) {
+                     ^
+                     E
+/Users/yusuf/bitbucket/pisan343/graph-solution/graph.cpp:191:7: warning: 'auto u' can be declared as 'auto *u' [llvm-qualified-auto]
+      auto u = e->to;
+      ^
+note: this fix will not be applied because it overlaps with another fix
+/Users/yusuf/bitbucket/pisan343/graph-solution/graph.cpp:191:7: warning: 'auto u' can be declared as 'auto *u' [readability-qualified-auto]
+note: this fix will not be applied because it overlaps with another fix
+/Users/yusuf/bitbucket/pisan343/graph-solution/graph.cpp:191:12: warning: invalid case style for variable 'u' [readability-identifier-naming]
+      auto u = e->to;
+           ^
+           U
+/Users/yusuf/bitbucket/pisan343/graph-solution/graph.cpp:194:11: warning: invalid case style for variable 'newPathCost' [readability-identifier-naming]
+      int newPathCost = weights[v->label] + e->weight;
+          ^~~~~~~~~~~
+          NewPathCost
+/Users/yusuf/bitbucket/pisan343/graph-solution/graph.cpp:195:14: warning: invalid case style for variable 'uLabel' [readability-identifier-naming]
+      string uLabel = u->label;
+             ^~~~~~
+             ULabel
+/Users/yusuf/bitbucket/pisan343/graph-solution/graph.cpp:212:30: warning: invalid case style for parameter 'startLabel' [readability-identifier-naming]
+int Graph::mst(const string &startLabel,
+                             ^~~~~~~~~~
+                             StartLabel
+/Users/yusuf/bitbucket/pisan343/graph-solution/graph.cpp:213:21: warning: invalid case style for parameter 'visit' [readability-identifier-naming]
+               void visit(const string &from, const string &to,
+                    ^~~~~
+                    Visit
+/Users/yusuf/bitbucket/pisan343/graph-solution/graph.cpp:213:41: warning: invalid case style for parameter 'from' [readability-identifier-naming]
+               void visit(const string &from, const string &to,
+                                        ^~~~
+                                        From
+/Users/yusuf/bitbucket/pisan343/graph-solution/graph.cpp:213:61: warning: invalid case style for parameter 'to' [readability-identifier-naming]
+               void visit(const string &from, const string &to,
+                                                            ^~
+                                                            To
+/Users/yusuf/bitbucket/pisan343/graph-solution/graph.cpp:214:31: warning: invalid case style for parameter 'weight' [readability-identifier-naming]
+                          int weight)) const {
+                              ^~~~~~
+                              Weight
+/Users/yusuf/bitbucket/pisan343/graph-solution/graph.cpp:215:3: warning: 'auto v' can be declared as 'auto *v' [llvm-qualified-auto]
+  auto v = findVertex(startLabel);
+  ^
+note: this fix will not be applied because it overlaps with another fix
+/Users/yusuf/bitbucket/pisan343/graph-solution/graph.cpp:215:3: warning: 'auto v' can be declared as 'auto *v' [readability-qualified-auto]
+note: this fix will not be applied because it overlaps with another fix
+/Users/yusuf/bitbucket/pisan343/graph-solution/graph.cpp:215:8: warning: invalid case style for variable 'v' [readability-identifier-naming]
+  auto v = findVertex(startLabel);
+       ^
+       V
+/Users/yusuf/bitbucket/pisan343/graph-solution/graph.cpp:218:17: warning: invalid case style for variable 'mstVertices' [readability-identifier-naming]
+  set<Vertex *> mstVertices;
+                ^~~~~~~~~~~
+                MstVertices
+/Users/yusuf/bitbucket/pisan343/graph-solution/graph.cpp:220:53: warning: invalid case style for variable 'potentials' [readability-identifier-naming]
+  priority_queue<IntE, vector<IntE>, greater<IntE>> potentials;
+                                                    ^~~~~~~~~~
+                                                    Potentials
+/Users/yusuf/bitbucket/pisan343/graph-solution/graph.cpp:221:7: warning: invalid case style for variable 'total' [readability-identifier-naming]
+  int total = 0;
+      ^~~~~
+      Total
+/Users/yusuf/bitbucket/pisan343/graph-solution/graph.cpp:223:8: warning: 'auto E' can be declared as 'auto *E' [llvm-qualified-auto]
+  for (auto E : v->edges)
+       ^
+note: this fix will not be applied because it overlaps with another fix
+/Users/yusuf/bitbucket/pisan343/graph-solution/graph.cpp:223:8: warning: 'auto E' can be declared as 'auto *E' [readability-qualified-auto]
+note: this fix will not be applied because it overlaps with another fix
+/Users/yusuf/bitbucket/pisan343/graph-solution/graph.cpp:226:5: warning: 'auto e' can be declared as 'auto *e' [llvm-qualified-auto]
+    auto e = potentials.top().second;
+    ^
+note: this fix will not be applied because it overlaps with another fix
+/Users/yusuf/bitbucket/pisan343/graph-solution/graph.cpp:226:5: warning: 'auto e' can be declared as 'auto *e' [readability-qualified-auto]
+note: this fix will not be applied because it overlaps with another fix
+/Users/yusuf/bitbucket/pisan343/graph-solution/graph.cpp:226:10: warning: invalid case style for variable 'e' [readability-identifier-naming]
+    auto e = potentials.top().second;
+         ^
+         E
+/Users/yusuf/bitbucket/pisan343/graph-solution/graph.cpp:233:10: warning: 'auto e2' can be declared as 'auto *e2' [llvm-qualified-auto]
+    for (auto e2 : e->to->edges)
+         ^
+note: this fix will not be applied because it overlaps with another fix
+/Users/yusuf/bitbucket/pisan343/graph-solution/graph.cpp:233:10: warning: 'auto e2' can be declared as 'auto *e2' [readability-qualified-auto]
+note: this fix will not be applied because it overlaps with another fix
+/Users/yusuf/bitbucket/pisan343/graph-solution/graph.cpp:233:15: warning: invalid case style for variable 'e2' [readability-identifier-naming]
+    for (auto e2 : e->to->edges)
+              ^~
+              E2
+/Users/yusuf/bitbucket/pisan343/graph-solution/graph.cpp:255:36: warning: invalid case style for parameter 'filename' [readability-identifier-naming]
+bool Graph::readFile(const string &filename) {
+                                   ^~~~~~~~
+                                   Filename
+/Users/yusuf/bitbucket/pisan343/graph-solution/graph.cpp:256:12: warning: invalid case style for variable 'myfile' [readability-identifier-naming]
+  ifstream myfile(filename);
+           ^~~~~~
+           Myfile
+/Users/yusuf/bitbucket/pisan343/graph-solution/graph.cpp:261:7: warning: variable 'edges' is not initialized [cppcoreguidelines-init-variables]
+  int edges;
+      ^
+            = 0
+/Users/yusuf/bitbucket/pisan343/graph-solution/graph.cpp:261:7: warning: invalid case style for variable 'edges' [readability-identifier-naming]
+  int edges;
+      ^~~~~
+      Edges
+/Users/yusuf/bitbucket/pisan343/graph-solution/graph.cpp:262:7: warning: variable 'weight' is not initialized [cppcoreguidelines-init-variables]
+  int weight;
+      ^
+             = 0
+/Users/yusuf/bitbucket/pisan343/graph-solution/graph.cpp:262:7: warning: invalid case style for variable 'weight' [readability-identifier-naming]
+  int weight;
+      ^~~~~~
+      Weight
+/Users/yusuf/bitbucket/pisan343/graph-solution/graph.cpp:263:10: warning: invalid case style for variable 'fromVertex' [readability-identifier-naming]
+  string fromVertex;
+         ^~~~~~~~~~
+         FromVertex
+/Users/yusuf/bitbucket/pisan343/graph-solution/graph.cpp:264:10: warning: invalid case style for variable 'toVertex' [readability-identifier-naming]
+  string toVertex;
+         ^~~~~~~~
+         ToVertex
+/Users/yusuf/bitbucket/pisan343/graph-solution/graph.cpp:266:12: warning: invalid case style for variable 'i' [readability-identifier-naming]
+  for (int i = 0; i < edges; ++i) {
+           ^      ~            ~
+           I      I            I
+/Users/yusuf/bitbucket/pisan343/graph-solution/graph.h:21:23: warning: invalid case style for parameter 'directionalEdges' [readability-identifier-naming]
+  explicit Graph(bool directionalEdges = true);
+                      ^~~~~~~~~~~~~~~~
+                      DirectionalEdges
+/Users/yusuf/bitbucket/pisan343/graph-solution/graph.h:27:26: warning: invalid case style for parameter 'label' [readability-identifier-naming]
+  bool add(const string &label);
+                         ^~~~~
+                         Label
+/Users/yusuf/bitbucket/pisan343/graph-solution/graph.h:30:31: warning: invalid case style for parameter 'label' [readability-identifier-naming]
+  bool contains(const string &label) const;
+                              ^~~~~
+                              Label
+/Users/yusuf/bitbucket/pisan343/graph-solution/graph.h:40:30: warning: invalid case style for parameter 'from' [readability-identifier-naming]
+  bool connect(const string &from, const string &to, int weight = 0);
+                             ^~~~
+                             From
+/Users/yusuf/bitbucket/pisan343/graph-solution/graph.h:40:50: warning: invalid case style for parameter 'to' [readability-identifier-naming]
+  bool connect(const string &from, const string &to, int weight = 0);
+                                                 ^~
+                                                 To
+/Users/yusuf/bitbucket/pisan343/graph-solution/graph.h:40:58: warning: invalid case style for parameter 'weight' [readability-identifier-naming]
+  bool connect(const string &from, const string &to, int weight = 0);
+                                                         ^~~~~~
+                                                         Weight
+/Users/yusuf/bitbucket/pisan343/graph-solution/graph.h:44:33: warning: invalid case style for parameter 'from' [readability-identifier-naming]
+  bool disconnect(const string &from, const string &to);
+                                ^~~~
+                                From
+/Users/yusuf/bitbucket/pisan343/graph-solution/graph.h:44:53: warning: invalid case style for parameter 'to' [readability-identifier-naming]
+  bool disconnect(const string &from, const string &to);
+                                                    ^~
+                                                    To
+/Users/yusuf/bitbucket/pisan343/graph-solution/graph.h:50:35: warning: invalid case style for parameter 'label' [readability-identifier-naming]
+  int neighborsSize(const string &label) const;
+                                  ^~~~~
+                                  Label
+/Users/yusuf/bitbucket/pisan343/graph-solution/graph.h:54:41: warning: invalid case style for parameter 'label' [readability-identifier-naming]
+  string getEdgesAsString(const string &label) const;
+                                        ^~~~~
+                                        Label
+/Users/yusuf/bitbucket/pisan343/graph-solution/graph.h:61:31: warning: invalid case style for parameter 'filename' [readability-identifier-naming]
+  bool readFile(const string &filename);
+                              ^~~~~~~~
+                              Filename
+/Users/yusuf/bitbucket/pisan343/graph-solution/graph.h:64:26: warning: invalid case style for parameter 'startLabel' [readability-identifier-naming]
+  void dfs(const string &startLabel, void visit(const string &label));
+                         ^~~~~~~~~~
+                         StartLabel
+/Users/yusuf/bitbucket/pisan343/graph-solution/graph.h:64:43: warning: invalid case style for parameter 'visit' [readability-identifier-naming]
+  void dfs(const string &startLabel, void visit(const string &label));
+                                          ^~~~~
+                                          Visit
+/Users/yusuf/bitbucket/pisan343/graph-solution/graph.h:64:63: warning: invalid case style for parameter 'label' [readability-identifier-naming]
+  void dfs(const string &startLabel, void visit(const string &label));
+                                                              ^~~~~
+                                                              Label
+/Users/yusuf/bitbucket/pisan343/graph-solution/graph.h:68:26: warning: invalid case style for parameter 'startLabel' [readability-identifier-naming]
+  void bfs(const string &startLabel, void visit(const string &label));
+                         ^~~~~~~~~~
+                         StartLabel
+/Users/yusuf/bitbucket/pisan343/graph-solution/graph.h:68:43: warning: invalid case style for parameter 'visit' [readability-identifier-naming]
+  void bfs(const string &startLabel, void visit(const string &label));
+                                          ^~~~~
+                                          Visit
+/Users/yusuf/bitbucket/pisan343/graph-solution/graph.h:68:63: warning: invalid case style for parameter 'label' [readability-identifier-naming]
+  void bfs(const string &startLabel, void visit(const string &label));
+                                                              ^~~~~
+                                                              Label
+/Users/yusuf/bitbucket/pisan343/graph-solution/graph.h:76:26: warning: invalid case style for parameter 'startLabel' [readability-identifier-naming]
+  dijkstra(const string &startLabel) const;
+                         ^~~~~~~~~~
+                         StartLabel
+/Users/yusuf/bitbucket/pisan343/graph-solution/graph.h:82:25: warning: invalid case style for parameter 'startLabel' [readability-identifier-naming]
+  int mst(const string &startLabel,
+                        ^~~~~~~~~~
+                        StartLabel
+/Users/yusuf/bitbucket/pisan343/graph-solution/graph.h:83:16: warning: invalid case style for parameter 'visit' [readability-identifier-naming]
+          void visit(const string &from, const string &to, int weight)) const;
+               ^~~~~
+               Visit
+/Users/yusuf/bitbucket/pisan343/graph-solution/graph.h:83:36: warning: invalid case style for parameter 'from' [readability-identifier-naming]
+          void visit(const string &from, const string &to, int weight)) const;
+                                   ^~~~
+                                   From
+/Users/yusuf/bitbucket/pisan343/graph-solution/graph.h:83:56: warning: invalid case style for parameter 'to' [readability-identifier-naming]
+          void visit(const string &from, const string &to, int weight)) const;
+                                                       ^~
+                                                       To
+/Users/yusuf/bitbucket/pisan343/graph-solution/graph.h:83:64: warning: invalid case style for parameter 'weight' [readability-identifier-naming]
+          void visit(const string &from, const string &to, int weight)) const;
+                                                               ^~~~~~
+                                                               Weight
+/Users/yusuf/bitbucket/pisan343/graph-solution/graph.h:88:8: warning: invalid case style for member 'directionalEdges' [readability-identifier-naming]
+  bool directionalEdges;
+       ^~~~~~~~~~~~~~~~
+       DirectionalEdges
+/Users/yusuf/bitbucket/pisan343/graph-solution/graph.h:94:33: warning: invalid case style for parameter 'v' [readability-identifier-naming]
+  static void dfsHelper(Vertex *v, void visit(const string &label));
+                                ^
+                                V
+/Users/yusuf/bitbucket/pisan343/graph-solution/graph.h:94:41: warning: invalid case style for parameter 'visit' [readability-identifier-naming]
+  static void dfsHelper(Vertex *v, void visit(const string &label));
+                                        ^~~~~
+                                        Visit
+/Users/yusuf/bitbucket/pisan343/graph-solution/graph.h:94:61: warning: invalid case style for parameter 'label' [readability-identifier-naming]
+  static void dfsHelper(Vertex *v, void visit(const string &label));
+                                                            ^~~~~
+                                                            Label
+/Users/yusuf/bitbucket/pisan343/graph-solution/graph.h:97:33: warning: invalid case style for parameter 'v' [readability-identifier-naming]
+  static void bfsHelper(Vertex *v, void visit(const string &label));
+                                ^
+                                V
+/Users/yusuf/bitbucket/pisan343/graph-solution/graph.h:97:41: warning: invalid case style for parameter 'visit' [readability-identifier-naming]
+  static void bfsHelper(Vertex *v, void visit(const string &label));
+                                        ^~~~~
+                                        Visit
+/Users/yusuf/bitbucket/pisan343/graph-solution/graph.h:97:61: warning: invalid case style for parameter 'label' [readability-identifier-naming]
+  static void bfsHelper(Vertex *v, void visit(const string &label));
+                                                            ^~~~~
+                                                            Label
+/Users/yusuf/bitbucket/pisan343/graph-solution/graph.h:101:36: warning: invalid case style for parameter 'label' [readability-identifier-naming]
+  Vertex *findVertex(const string &label) const;
+                                   ^~~~~
+                                   Label
+/Users/yusuf/bitbucket/pisan343/graph-solution/graph.h:104:38: warning: invalid case style for parameter 'label' [readability-identifier-naming]
+  Vertex *createVertex(const string &label);
+                                     ^~~~~
+                                     Label
+/Users/yusuf/bitbucket/pisan343/graph-solution/graph.h:107:7: warning: use default member initializer for 'numberOfEdges' [modernize-use-default-member-init]
+  int numberOfEdges;
+      ^
+                   {0}
+/Users/yusuf/bitbucket/pisan343/graph-solution/graph.h:107:7: warning: invalid case style for member 'numberOfEdges' [readability-identifier-naming]
+  int numberOfEdges;
+      ^~~~~~~~~~~~~
+      NumberOfEdges
+/Users/yusuf/bitbucket/pisan343/graph-solution/graph.h:110:25: warning: invalid case style for member 'vertices' [readability-identifier-naming]
+  map<string, Vertex *> vertices;
+                        ^~~~~~~~
+                        Vertices
+/Users/yusuf/bitbucket/pisan343/graph-solution/graph.h:112:49: warning: invalid case style for parameter 'label' [readability-identifier-naming]
+  static string modifyIfAllDigits(const string &label);
+                                                ^~~~~
+                                                Label
+/Users/yusuf/bitbucket/pisan343/graph-solution/vertex.cpp:21:30: warning: invalid case style for parameter 'os' [readability-identifier-naming]
+ostream &operator<<(ostream &os, const Vertex &v) {
+                             ^~
+                             Os
+/Users/yusuf/bitbucket/pisan343/graph-solution/vertex.cpp:21:48: warning: invalid case style for parameter 'v' [readability-identifier-naming]
+ostream &operator<<(ostream &os, const Vertex &v) {
+                                               ^
+                                               V
+/Users/yusuf/bitbucket/pisan343/graph-solution/vertex.cpp:25:30: warning: invalid case style for parameter 'label' [readability-identifier-naming]
+Vertex::Vertex(const string &label) : label{label} {}
+                             ^~~~~          ~~~~~
+                             Label          Label
+/Users/yusuf/bitbucket/pisan343/graph-solution/vertex.cpp:28:8: warning: 'auto e' can be declared as 'auto *e' [llvm-qualified-auto]
+  for (auto e : edges)
+       ^
+note: this fix will not be applied because it overlaps with another fix
+/Users/yusuf/bitbucket/pisan343/graph-solution/vertex.cpp:28:8: warning: 'auto e' can be declared as 'auto *e' [readability-qualified-auto]
+note: this fix will not be applied because it overlaps with another fix
+/Users/yusuf/bitbucket/pisan343/graph-solution/vertex.cpp:28:13: warning: invalid case style for variable 'e' [readability-identifier-naming]
+  for (auto e : edges)
+            ^
+            E
+/Users/yusuf/bitbucket/pisan343/graph-solution/vertex.cpp:32:30: warning: invalid case style for parameter 'toVertex' [readability-identifier-naming]
+bool Vertex::hasEdge(Vertex *toVertex) const {
+                             ^~~~~~~~
+                             ToVertex
+/Users/yusuf/bitbucket/pisan343/graph-solution/vertex.cpp:36:34: warning: invalid case style for parameter 'e' [readability-identifier-naming]
+                [toVertex](Edge *e) { return e->to == toVertex; });
+                                 ^           ~
+                                 E           E
+/Users/yusuf/bitbucket/pisan343/graph-solution/vertex.cpp:47:9: warning: variable 'e' is not initialized [cppcoreguidelines-init-variables]
+  Edge *e;
+        ^
+          = nullptr
+/Users/yusuf/bitbucket/pisan343/graph-solution/vertex.cpp:47:9: warning: invalid case style for variable 'e' [readability-identifier-naming]
+  Edge *e;
+        ^
+        E
+/Users/yusuf/bitbucket/pisan343/graph-solution/vertex.cpp:49:16: warning: invalid case style for variable 'ss' [readability-identifier-naming]
+  stringstream ss;
+               ^~
+               Ss
+/Users/yusuf/bitbucket/pisan343/graph-solution/vertex.cpp:60:30: warning: invalid case style for parameter 'to' [readability-identifier-naming]
+bool Vertex::connect(Vertex *to, int edgeWeight) {
+                             ^~
+                             To
+/Users/yusuf/bitbucket/pisan343/graph-solution/vertex.cpp:60:38: warning: invalid case style for parameter 'edgeWeight' [readability-identifier-naming]
+bool Vertex::connect(Vertex *to, int edgeWeight) {
+                                     ^~~~~~~~~~
+                                     EdgeWeight
+/Users/yusuf/bitbucket/pisan343/graph-solution/vertex.cpp:61:9: warning: invalid case style for variable 'myEdge' [readability-identifier-naming]
+  auto *myEdge = new Edge(this, to, edgeWeight);
+        ^~~~~~
+        MyEdge
+/Users/yusuf/bitbucket/pisan343/graph-solution/vertex.cpp:63:51: warning: invalid case style for parameter 'a' [readability-identifier-naming]
+  sort(edges.begin(), edges.end(), [](class Edge *a, class Edge *b) {
+                                                  ^
+                                                  A
+/Users/yusuf/bitbucket/pisan343/graph-solution/vertex.cpp:63:66: warning: invalid case style for parameter 'b' [readability-identifier-naming]
+  sort(edges.begin(), edges.end(), [](class Edge *a, class Edge *b) {
+                                                                 ^
+                                                                 B
+/Users/yusuf/bitbucket/pisan343/graph-solution/vertex.cpp:71:33: warning: invalid case style for parameter 'to' [readability-identifier-naming]
+bool Vertex::disconnect(Vertex *to) {
+                                ^~
+                                To
+/Users/yusuf/bitbucket/pisan343/graph-solution/vertex.cpp:74:7: warning: invalid case style for variable 'index' [readability-identifier-naming]
+  int index = 0;
+      ^~~~~
+      Index
+/Users/yusuf/bitbucket/pisan343/graph-solution/vertex.h:24:39: warning: invalid case style for parameter 'os' [readability-identifier-naming]
+  friend ostream &operator<<(ostream &os, const Vertex &v);
+                                      ^~
+                                      Os
+/Users/yusuf/bitbucket/pisan343/graph-solution/vertex.h:24:57: warning: invalid case style for parameter 'v' [readability-identifier-naming]
+  friend ostream &operator<<(ostream &os, const Vertex &v);
+                                                        ^
+                                                        V
+/Users/yusuf/bitbucket/pisan343/graph-solution/vertex.h:30:33: warning: invalid case style for parameter 'label' [readability-identifier-naming]
+  explicit Vertex(const string &label);
+                                ^~~~~
+                                Label
+/Users/yusuf/bitbucket/pisan343/graph-solution/vertex.h:37:10: warning: invalid case style for member 'label' [readability-identifier-naming]
+  string label;
+         ^~~~~
+         Label
+/Users/yusuf/bitbucket/pisan343/graph-solution/vertex.h:40:8: warning: invalid case style for member 'isVisited' [readability-identifier-naming]
+  bool isVisited{false};
+       ^~~~~~~~~
+       IsVisited
+/Users/yusuf/bitbucket/pisan343/graph-solution/vertex.h:42:24: warning: invalid case style for parameter 'to' [readability-identifier-naming]
+  bool connect(Vertex *to, int edgeWeight = 0);
+                       ^~
+                       To
+/Users/yusuf/bitbucket/pisan343/graph-solution/vertex.h:42:32: warning: invalid case style for parameter 'edgeWeight' [readability-identifier-naming]
+  bool connect(Vertex *to, int edgeWeight = 0);
+                               ^~~~~~~~~~
+                               EdgeWeight
+/Users/yusuf/bitbucket/pisan343/graph-solution/vertex.h:43:27: warning: invalid case style for parameter 'to' [readability-identifier-naming]
+  bool disconnect(Vertex *to);
+                          ^~
+                          To
+/Users/yusuf/bitbucket/pisan343/graph-solution/vertex.h:45:24: warning: invalid case style for parameter 'toVertex' [readability-identifier-naming]
+  bool hasEdge(Vertex *toVertex) const;
+                       ^~~~~~~~
+                       ToVertex
+/Users/yusuf/bitbucket/pisan343/graph-solution/vertex.h:51:18: warning: invalid case style for member 'edges' [readability-identifier-naming]
+  vector<Edge *> edges;
+                 ^~~~~
+                 Edges
+Suppressed 88380 warnings (88379 in non-user code, 1 NOLINT).
+Use -header-filter=.* to display errors from all non-system headers. Use -system-headers to display errors from system headers as well.
+=====================================================
+4. clang-format does not find any formatting issues
+=====================================================
+Running clang-format on ./edge.cpp
+Running clang-format on ./graph.cpp
+Running clang-format on ./graphtest.cpp
+Running clang-format on ./main.cpp
+Running clang-format on ./vertex.cpp
+=====================================================
+5. No memory leaks using g++
+=====================================================
+=====================================================
+6. No memory leaks using valgrind, look for "definitely lost" 
+=====================================================
+==77354== Memcheck, a memory error detector
+==77354== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==77354== Using Valgrind-3.16.1 and LibVEX; rerun with -h for copyright info
+==77354== Command: ./a.out
+==77354== Parent PID: 77148
+==77354== 
+==77354== 
+==77354== HEAP SUMMARY:
+==77354==     in use at exit: 84,039 bytes in 168 blocks
+==77354==   total heap usage: 432 allocs, 264 frees, 160,759 bytes allocated
+==77354== 
+==77354== LEAK SUMMARY:
+==77354==    definitely lost: 0 bytes in 0 blocks
+==77354==    indirectly lost: 0 bytes in 0 blocks
+==77354==      possibly lost: 72 bytes in 3 blocks
+==77354==    still reachable: 65,736 bytes in 7 blocks
+==77354==         suppressed: 18,231 bytes in 158 blocks
+==77354== Rerun with --leak-check=full to see details of leaked memory
+==77354== 
+==77354== For lists of detected and suppressed errors, rerun with: -s
+==77354== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 1 from 1)
+=====================================================
+7. Tests have full code coverage
+=====================================================
+warning: default.profraw: Unsupported instrumentation profile format version
+error: No profiles could be merged.
+ERROR: ./check-code-coverage.sh: Failed to create a.out.profdata
+Sun Jan 24 08:55:46 PST 2021
+=====================================================
+To create an output.txt file with all the output from this script
+Run the below command
+      ./create-output.sh > output.txt 2>&1 
+=====================================================
