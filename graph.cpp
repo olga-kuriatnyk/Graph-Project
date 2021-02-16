@@ -271,19 +271,16 @@ Graph::dijkstra(const string &startLabel) const {
   return make_pair(weights, previous);
 }
 
-// TODO: rewrite the algorith, so there is no startLabel 
 // minimum spanning tree using Prim's algorithm
-int Graph::mstPrim(const string &startLabel,
-                   void visit(const string &from, const string &to,
-                              int weight)) const {
-  if (graph.find(startLabel) == graph.end()) {
+int Graph::mstPrim() const {
+  if (graph.empty()) {
     return -1;
   }
   int result = 0;
   using IE = pair<int, Edge *>;
   priority_queue<IE, vector<IE>, greater<IE>> q;
-  Vertex *v = graph.find(startLabel)->second;
   set<string> set;
+  Vertex *v = graph.begin()->second;
   for (auto &edge : v->edges) {
     q.push({edge->weight, edge});
   }
@@ -298,7 +295,6 @@ int Graph::mstPrim(const string &startLabel,
     if (set.find(currEdgeToLabel) == set.end()) {
       set.insert(currEdgeToLabel);
       result += currW;
-      visit(currEdgeFromLabel, currEdgeToLabel, currW);
       for (auto &edge : graph.find(currEdgeToLabel)->second->edges) {
         if (set.find(edge->to->label) == set.end()) {
           q.push({edge->weight, edge});
@@ -307,14 +303,6 @@ int Graph::mstPrim(const string &startLabel,
     }
   }
   return result;
-}
-
-// TODO: implement
-// minimum spanning tree using mstKruskal algorithm
-int Graph::mstKruskal([[maybe_unused]] void visit(const string &from,
-                                                  const string &to,
-                                                  int weight)) const {
-  return -1;
 }
 
 // read a text file and create the graph

@@ -144,8 +144,8 @@ void testGraph0Dijkstra() {
   assert(map2string(previous).empty() && "Dijkstra(C) previous");
 }
 
-void testGraph0NotDirected() {
-  cout << "testGraph0NotDirected" << endl;
+void testGraphNotDirected() {
+  cout << "testGraphNotDirected" << endl;
   bool isDirectional = false;
   Graph g(isDirectional);
   if (!g.readFile("graph0.txt")) {
@@ -185,24 +185,20 @@ void testGraph0NotDirected() {
   assert(map2string(previous).empty() && "Dijkstra(C) previous");
 
   globalSS.str("");
-  int mstLength = g.mstPrim("A", edgePrinter);
+  int mstLength = g.mstPrim();
   assert(mstLength == 4 && "mst A is 4");
-  assert(globalSS.str() == "[AB 1][BC 3]" && "mst A is [AB 1][BC 3]");
 
+  Graph g2(isDirectional);
   globalSS.str("");
-  mstLength = g.mstPrim("B", edgePrinter);
-  assert(mstLength == 4 && "mst 4 is 4");
-  assert(globalSS.str() == "[BA 1][BC 3]");
-
-  globalSS.str("");
-  mstLength = g.mstPrim("C", edgePrinter);
-  assert(mstLength == 4 && "mst C is 4");
-  assert(globalSS.str() == "[CB 3][BA 1]");
-
-  globalSS.str("");
-  mstLength = g.mstPrim("X", edgePrinter);
+  mstLength = g2.mstPrim();
   assert(mstLength == -1 && "mst X is -1");
-  assert(globalSS.str().empty() && "mst for vertex not found");
+
+  if (!g2.readFile("graph4.txt")) {
+    return;
+  }
+  globalSS.str("");
+  mstLength = g2.mstPrim();
+  assert(mstLength == 22 && "mst A is 22");
 }
 
 void testGraph1() {
@@ -243,6 +239,6 @@ void testAll() {
   testGraph0DFS();
   testGraph0BFS();
   testGraph0Dijkstra();
-  testGraph0NotDirected();
+  testGraphNotDirected();
   testGraph1();
 }
